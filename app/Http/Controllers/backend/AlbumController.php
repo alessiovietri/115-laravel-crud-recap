@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Album;
 use Illuminate\Http\Request;
+
+// Models
+use App\Models\Album;
+
+// Requests
+use App\Http\Requests\StoreAlbumRequest;
 
 class AlbumController extends Controller
 {
@@ -29,20 +34,13 @@ class AlbumController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreAlbumRequest $request)
     {
-        $validatedData = $request->validate([
-            'title' => 'required|max:128',
-            'artist' => 'required|max:128',
-            'genre' => 'required|max:32',
-            'cover' => 'nullable|max:1024',
-            'release_date' => 'nullable|date',
-            'only_digital' => 'nullable|boolean',
-        ], [
-            'title.required' => 'Il titolo è obbligatorio',
-            'title.max' => 'Il titolo non può essere più lungo di 128 caratteri',
-        ]);
+        $validatedData = $request->validated();
 
+        /*
+            Task 2 di store: inserimento nuovo album
+        */
         $album = new Album();
         $album->fill($validatedData);
         $album->save();
