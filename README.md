@@ -18,3 +18,7 @@
 
 
 
+## OBIETTIVO
+Creare un gestionale per una casa discografica. Nello specifico, vogliamo dare la possibilità ai proprietari della casa
+discografica di gestire gli album degli artisti
+
