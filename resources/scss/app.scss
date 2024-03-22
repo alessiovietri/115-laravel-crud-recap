@@ -1,0 +1,11 @@
+/*resources/scss/app.scss*/
+@import "bootstrap/scss/bootstrap";
+
+main
+{
+    background-image: url('../img/page_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+}
