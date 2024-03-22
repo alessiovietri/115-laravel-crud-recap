@@ -38,6 +38,9 @@ class AlbumController extends Controller
             'cover' => 'nullable|max:1024',
             'release_date' => 'nullable|date',
             'only_digital' => 'nullable|boolean',
+        ], [
+            'title.required' => 'Il titolo è obbligatorio',
+            'title.max' => 'Il titolo non può essere più lungo di 128 caratteri',
         ]);
 
         $album = new Album();
